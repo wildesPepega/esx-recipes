@@ -1,9 +1,9 @@
 $engine: 3
 $onesync: on
-name: ESX Legacy
-version: 1.9.4
-author: ESX Framework
-description: The official recipe of the most popular FiveM RP framework, containing Jobs, Housing, Vehicles & more!
+name: ESX Legacy Fixxed
+version: 1.10.1
+author: ESX Framework & wildesPepega
+description: The official recipe of the most popular FiveM RP framework with a fixxed thing.
 
 tasks:
   # Download default CFX resources
