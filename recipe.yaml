@@ -33,7 +33,7 @@ tasks:
     dest: ./resources/[standalone]/bob74_ipl
 
   - action: download_github
-    src: https://github.com/wildesPepega/esx-core
+    src: https://github.com/wildesPepega/esx_core
     ref: main
     dest: ./tmp/core
 
