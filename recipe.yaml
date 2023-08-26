@@ -57,6 +57,10 @@ tasks:
     ref: main
     dest: ./tmp/addons/esx_policejob
 
+- action: download_github
+    src: https://github.com/esx-framework/esx_ambulancejob
+    ref: main
+    dest: ./tmp/addons/esx_ambulancejob
 
   - action: download_github
     src: https://github.com/esx-framework/esx_basicneeds
