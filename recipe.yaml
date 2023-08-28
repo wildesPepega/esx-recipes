@@ -23,6 +23,10 @@ tasks:
     src: ./tmp/recipe/server.cfg
     dest: ./server.cfg
 
+  - action: move_path
+    src: ./tmp/recipe/esxLogo.png
+    dest: ./esxLogo.png
+
   # Download basic resources and ESX dependencies
 
   - action: connect_database
@@ -58,15 +62,9 @@ tasks:
     dest: ./tmp/addons/esx_policejob
 
   - action: download_github
-    src: https://github.com/esx-framework/esx_ambulancejob
-    ref: main
-    dest: ./tmp/addons/esx_ambulancejob
-
-  - action: download_github
     src: https://github.com/esx-framework/esx_basicneeds
     ref: main
     dest: ./tmp/addons/esx_basicneeds
-
 
   - action: download_github
     src: https://github.com/esx-framework/esx_clotheshop
@@ -92,20 +90,14 @@ tasks:
     dest: ./tmp/addons/esx_weaponshop
 
   - action: download_github
-    src: https://github.com/esx-framework/esx_shops
+    src: https://github.com/esx-framework/esx_drugs
     ref: main
-    dest: ./tmp/addons/esx_shops
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_billing
-    ref: main
-    dest: ./tmp/addons/esx_billing
+    dest: ./tmp/addons/esx_drugs
 
   - action: download_github
     src: https://github.com/esx-framework/esx_vehicleshop
     ref: main
     dest: ./tmp/addons/esx_vehicleshop
-
 
   - action: download_github
     src: https://github.com/esx-framework/esx_society
@@ -125,13 +117,16 @@ tasks:
     ref: main
     dest: ./tmp/addons/esx_accessories
 
+  - action: download_github
+    src: https://github.com/esx-framework/esx_ambulancejob
+    ref: main
+    dest: ./tmp/addons/esx_ambulancejob
 
   - action: download_github
     src: https://github.com/esx-framework/esx_status
     ref: main
     dest: ./tmp/addons/esx_status
-
-
+    
   - action: move_path
     src: ./tmp/core/[core]
     dest: ./resources/[core]
