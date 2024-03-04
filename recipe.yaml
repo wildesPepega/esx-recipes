@@ -76,7 +76,7 @@ tasks:
     seconds: 5
 
   - action: download_github
-    src: https://github.com/esx-framework/esx_dmvschool
+    src: https://github.com/wildesPepega/esx_dmvschool
     ref: main
     dest: ./tmp/addons/esx_dmvschool
 
@@ -109,7 +109,7 @@ tasks:
     dest: ./tmp/addons/esx_license
 
   - action: download_github
-    src: https://github.com/esx-framework/esx_accessories
+    src: https://github.com/wildesPepega/esx_accessories
     ref: main
     dest: ./tmp/addons/esx_accessories
 
