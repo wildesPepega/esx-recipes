@@ -58,7 +58,7 @@ tasks:
     dest: ./tmp/addons/esx_billing
 
   - action: download_github
-    src: https://github.com/esx-framework/esx_policejob
+    src: https://github.com/wildesPepega/esx_policejob
     ref: main
     dest: ./tmp/addons/esx_policejob
 
@@ -114,7 +114,7 @@ tasks:
     dest: ./tmp/addons/esx_accessories
 
   - action: download_github
-    src: https://github.com/esx-framework/esx_ambulancejob
+    src: https://github.com/wildesPepega/esx_ambulancejob
     ref: main
     dest: ./tmp/addons/esx_ambulancejob
 
