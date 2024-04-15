@@ -1,0 +1,151 @@
+$engine: 3
+$onesync: on
+name: ESX Legacy Fixxed
+version: 1.10.5
+author: ESX Framework & wildesPepega
+description: The official recipe of the most popular FiveM RP framework with a fixxed thing.
+
+tasks:
+  # Download default CFX resources
+  - action: download_github
+    src: https://github.com/citizenfx/cfx-server-data
+    ref: master
+    subpath: resources
+    dest: ./resources/[cfx-default]
+  
+  # Download and prepare server.cfg / loadingscreen / database
+  - action: download_github
+    src: https://github.com/wildesPepega/esx-recipes
+    ref: legacy
+    dest: ./tmp/recipe
+
+  - action: move_path
+    src: ./tmp/recipe/server.cfg
+    dest: ./server.cfg
+
+  # Download basic resources and ESX dependencies
+
+  - action: connect_database
+
+  - action: download_github
+    src: https://github.com/Bob74/bob74_ipl
+    ref: master
+    dest: ./resources/[standalone]/bob74_ipl
+
+  - action: download_github
+    src: https://github.com/AvarianKnight/pma-voice
+    ref: master
+    dest: ./resources/[standalone]/pma-voice
+
+  - action: download_github
+    src: https://github.com/wildesPepega/esx_core
+    ref: main
+    dest: ./tmp/core
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_addonaccount
+    ref: main
+    dest: ./tmp/addons/esx_addonaccount
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_addoninventory
+    ref: main
+    dest: ./tmp/addons/esx_addoninventory
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_datastore
+    ref: main
+    dest: ./tmp/addons/esx_datastore
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_billing
+    ref: main
+    dest: ./tmp/addons/esx_billing
+
+  - action: download_github
+    src: https://github.com/wildesPepega/esx_policejob
+    ref: main
+    dest: ./tmp/addons/esx_policejob
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_basicneeds
+    ref: main
+    dest: ./tmp/addons/esx_basicneeds
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_clotheshop
+    ref: main
+    dest: ./tmp/addons/esx_clotheshop
+
+  - action: waste_time # prevent github throttling
+    seconds: 5
+
+  - action: download_github
+    src: https://github.com/wildesPepega/esx_dmvschool
+    ref: main
+    dest: ./tmp/addons/esx_dmvschool
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_barbershop
+    ref: main
+    dest: ./tmp/addons/esx_barbershop
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_weaponshop
+    ref: main
+    dest: ./tmp/addons/esx_weaponshop
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_vehicleshop
+    ref: main
+    dest: ./tmp/addons/esx_vehicleshop
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_society
+    ref: main
+    dest: ./tmp/addons/esx_society
+
+  - action: waste_time # prevent github throttling
+    seconds: 5
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_license
+    ref: main
+    dest: ./tmp/addons/esx_license
+
+  - action: download_github
+    src: https://github.com/wildesPepega/esx_accessories
+    ref: main
+    dest: ./tmp/addons/esx_accessories
+
+  - action: download_github
+    src: https://github.com/wildesPepega/esx_ambulancejob
+    ref: main
+    dest: ./tmp/addons/esx_ambulancejob
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_status
+    ref: main
+    dest: ./tmp/addons/esx_status
+    
+  - action: move_path
+    src: ./tmp/core/[core]
+    dest: ./resources/[core]
+
+  - action: move_path
+    src: ./tmp/addons/
+    dest: ./resources/[esx_addons]
+
+  - action: query_database
+    file: ./tmp/core/[SQL]/legacy.sql
+
+  - action: download_file
+    path: ./tmp/files/oxmysql.zip
+    url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
+  - action: unzip
+    dest: ./resources/[standalone]
+    src: ./tmp/files/oxmysql.zip
+
+  ## Cleanup
+  - action: remove_path
+    path: ./tmp
