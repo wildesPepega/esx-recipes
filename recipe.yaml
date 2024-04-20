@@ -81,7 +81,7 @@ tasks:
     dest: ./tmp/addons/esx_dmvschool
 
   - action: download_github
-    src: https://github.com/esx-framework/esx_barbershop
+    src: https://github.com/wildesPepega//esx_barbershop
     ref: main
     dest: ./tmp/addons/esx_barbershop
 
